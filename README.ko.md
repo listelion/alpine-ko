@@ -4,13 +4,13 @@
 ![npm version](https://img.shields.io/npm/v/alpinejs)
 [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true)](https://alpinejs.codewithhugo.com/chat/)
 
-Alpine.js는 저렴한 비용으로 Vue 또는 React와 같은 큰 프레임워크의 반응성 및 선언적 특성을 제공합니다.
+Alpine.js는 저렴한 비용으로 Vue 또는 React와 같은 대규모 프레임워크의 반응성 및 선언적 특성을 제공합니다.
 
 DOM을 유지하고 적절한 동작을 사용할 수 있습니다.
 
 JavaScript용 [Tailwind](https://tailwindcss.com/)라고 생각하시면 됩니다.
 
-> 참고: 이 도구의 구분은 [Vue](https://vuejs.org/) (및 [Angular](https://angularjs.org/))에서 영감을 받았습니다. 저는 이러한 도구의 개발자들이 웹에 기여한 것에 대해 대단히 감사하고 있습니다.
+> 참고: 이 도구는 [Vue](https://vuejs.org/) (및 [Angular](https://angularjs.org/))에서 영감을 받았습니다. 저는 이러한 도구의 개발자들이 웹에 기여한 것에 대해 대단히 감사하고있습니다.
 
 
 ## 설치
