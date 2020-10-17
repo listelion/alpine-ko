@@ -33,7 +33,7 @@ JavaScript용 [Tailwind](https://tailwindcss.com/)라고 생각하시면 됩니�
 npm i alpinejs
 ```
 
-스크립트에 추가하세요.
+스크립트에 다음 내용을 추가하세요.
 ```js
 import 'alpinejs'
 ```
