@@ -102,16 +102,17 @@ import 'alpinejs'
 | [`x-init`](#x-init) | 구성요소가 초기화될 때 제공된 식을 실행합니다. |
 | [`x-show`](#x-show) | `display: none;` 부울 표현식에 따라 요소를 토글랍니다. (true 또는 false). |
 | [`x-bind`](#x-bind) | 전달 된 JS 표현식의 결과와 동일한 속성 값을 설정합니다. |
-| [`x-on`](#x-on) | Attaches an event listener to the element. Executes JS expression when emitted. |
-| [`x-model`](#x-model) | Adds "two-way data binding" to an element. Keeps input element in sync with component data. |
-| [`x-text`](#x-text) | Works similarly to `x-bind`, but will update the `innerText` of an element. |
-| [`x-html`](#x-html) | Works similarly to `x-bind`, but will update the `innerHTML` of an element. |
-| [`x-ref`](#x-ref) | Convenient way to retrieve raw DOM elements out of your component. |
-| [`x-if`](#x-if) | Remove an element completely from the DOM. Needs to be used on a `<template>` tag. |
-| [`x-for`](#x-for) | Create new DOM nodes for each item in an array. Needs to be used on a `<template>` tag. |
-| [`x-transition`](#x-transition) | Directives for applying classes to various stages of an element's transition. |
-| [`x-spread`](#x-spread) | Allows you to bind an object of Alpine directives to an element for better reusability. |
-| [`x-cloak`](#x-cloak) | This attribute is removed when Alpine initializes. Useful for hiding pre-initialized DOM. |
+| [`x-on`](#x-on) | 요소에 이벤트 리스너를 설치합니다. 이벤트가 발생하면 제공된 JS 표현식을 실행합니다. |
+| [`x-model`](#x-model) | 지시문은 입력 요소와의 데이터 바인딩을 보장합니다. 이를 통해 양방향으로 데이터 바인딩이 가능합니다. |
+| [`x-text`](#x-text) | 유사한 방식으로 작동 `x-bind`의 `innerText` 요소가 업데이트됩니다. |
+| [`x-html`](#x-html) | 유사한 방식으로 작동 `x-bind`의 `innerHTML` 요소가 업데이트됩니다. |
+| [`x-ref`](#x-ref) | 구성 요소의 DOM 요소를 가져오는 편리한 방법입니다. |
+| [`x-if`](#x-if) | 전달된 조건이 충족되지 않으면 DOM에서 요소를 완전히 제거합니다. `<template>` 태그에 사용되어야 합니다
+ |
+| [`x-for`](#x-for) | 배열의 각 항목에 대해 새 DOM 노드를 만듭니다. `<template>`태그에 사용해야합니다. |
+| [`x-transition`](#x-transition) | 요소 전환의 다양한 단계에 클래스를 추가하기 위한 지시. |
+| [`x-spread`](#x-spread) | Alpine 지시문이 있는 개체를 요소에 바인딩하여 재사용성을 높일 수 있습니다. |
+| [`x-cloak`](#x-cloak) | Alpine이 초기화되면 해제됩니다. 초기화 전에 DOM을 숨기는 데 유용합니다. |
 
 그리고 6가지 마법속성:
 
@@ -155,7 +156,6 @@ Vue 컴포넌트의 `data` 속성과 유사합니다.
 
 **컴포넌트 로직 추출**
 
-You can extract data (and behavior) into reusable functions:
 재사용이 가능한 데이터(동작)를 추출할 수 있습니다.
 
 ```html
@@ -195,9 +195,9 @@ You can extract data (and behavior) into reusable functions:
 
 **구조:** `<div x-data="..." x-init="[expression]"></div>`
 
-`x-init` runs an expression when a component is initialized.
+`x-init` 구성 요소가 초기화될 때 제공된 식을 실행합니다.
 
-If you wish to run code AFTER Alpine has made its initial updates to the DOM (something like a `mounted()` hook in VueJS), you can return a callback from `x-init`, and it will be run after:
+초기 Alpine DOM 업데이트 (예 : VueJS의 `mounted()` 후크 ) 후에 코드를 실행하려면 `x-init` 콜백을 전달할 수 있으며 초기화 후에 실행합니다.
 
 `x-init="() => { // we have access to the post-dom-initialization state here // }"`
 
@@ -212,7 +212,7 @@ If you wish to run code AFTER Alpine has made its initial updates to the DOM (so
 
 **x-show.transition**
 
-`x-show.transition` is a convenience API for making your `x-show`s more pleasant using CSS transitions.
+`x-show.transition`은 `x-show` 보다 더 나은 CSS transition을 제공하는 편리한 API입니다.
 
 ```html
 <div x-show.transition="open">
@@ -220,7 +220,7 @@ If you wish to run code AFTER Alpine has made its initial updates to the DOM (so
 </div>
 ```
 
-| Directive | Description |
+| 지침 | 설명 |
 | --- | --- |
 | `x-show.transition` | A simultaneous fade and scale. (opacity, scale: 0.95, timing-function: cubic-bezier(0.4, 0.0, 0.2, 1), duration-in: 150ms, duration-out: 75ms)
 | `x-show.transition.in` | Only transition in. |
@@ -560,7 +560,7 @@ Alpine offers 6 different transition directives for applying classes to various 
 
 These behave exactly like VueJs's transition directives, except they have different, more sensible names:
 
-| Directive | Description |
+| 지침 | 설명 |
 | --- | --- |
 | `:enter` | Applied during the entire entering phase. |
 | `:enter-start` | Added before element is inserted, removed one frame after element is inserted. |
