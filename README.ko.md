@@ -208,7 +208,7 @@ Vue 컴포넌트의 `data` 속성과 유사합니다.
 
 **구조:** `<div x-show="[expression]"></div>`
 
-`x-show` toggles the `display: none;` style on the element depending if the expression resolves to `true` or `false`.
+`x-show`는 스타일 `display: none;` 속성을 `true` 나 `false`값으로 컨트롤 할 수 있습니다.
 
 **x-show.transition**
 
